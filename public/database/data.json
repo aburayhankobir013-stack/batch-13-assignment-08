@@ -7,7 +7,7 @@
     "rating": 4.7,
     "stock": 10,
     "description": "Stylish UV protection sunglasses perfect for summer outings.",
-    "image": "https://i.postimg.cc/example1.png",
+    "image": "/assets/products/01.jpg",
     "category": "Accessories"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.5,
     "stock": 25,
     "description": "Comfortable and lightweight flip flops for beach days.",
-    "image": "https://i.postimg.cc/example2.png",
+    "image": "/assets/products/02.jpg",
     "category": "Footwear"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.6,
     "stock": 15,
     "description": "Wide brim straw hat for sun protection.",
-    "image": "https://i.postimg.cc/example3.png",
+    "image": "/assets/products/03.jpg",
     "category": "Accessories"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.4,
     "stock": 30,
     "description": "Keeps your water cool for hours during hot days.",
-    "image": "https://i.postimg.cc/example4.png",
+    "image": "/assets/products/04.jpg",
     "category": "Lifestyle"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.3,
     "stock": 20,
     "description": "Breathable cotton t-shirt for hot weather.",
-    "image": "https://i.postimg.cc/example5.png",
+    "image": "/assets/products/05.jpg",
     "category": "Clothing"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.8,
     "stock": 12,
     "description": "Lightweight and stylish summer dress.",
-    "image": "https://i.postimg.cc/example6.png",
+    "image": "/assets/products/06.jpg",
     "category": "Clothing"
   },
   {
@@ -73,7 +73,7 @@
     "rating": 4.2,
     "stock": 40,
     "description": "Handheld rechargeable mini fan.",
-    "image": "https://i.postimg.cc/example7.png",
+    "image": "/assets/products/07.jpg",
     "category": "Electronics"
   },
   {
@@ -84,7 +84,7 @@
     "rating": 4.7,
     "stock": 18,
     "description": "Protects your skin from harmful UV rays.",
-    "image": "https://i.postimg.cc/example8.png",
+    "image": "/assets/products/08.jpg",
     "category": "Beauty"
   },
   {
@@ -95,7 +95,7 @@
     "rating": 4.5,
     "stock": 22,
     "description": "Spacious bag perfect for beach essentials.",
-    "image": "https://i.postimg.cc/example9.png",
+    "image": "/assets/products/09.jpg",
     "category": "Accessories"
   },
   {
@@ -106,7 +106,7 @@
     "rating": 4.6,
     "stock": 19,
     "description": "Quick-dry swimming shorts.",
-    "image": "https://i.postimg.cc/example10.png",
+    "image": "/assets/products/10.jpg",
     "category": "Clothing"
   },
   {
@@ -117,7 +117,7 @@
     "rating": 4.4,
     "stock": 14,
     "description": "Fun inflatable float for pool parties.",
-    "image": "https://i.postimg.cc/example11.png",
+    "image": "/assets/products/11.jpg",
     "category": "Lifestyle"
   },
   {
@@ -128,7 +128,7 @@
     "rating": 4.3,
     "stock": 28,
     "description": "Instant cooling and refreshing mist.",
-    "image": "https://i.postimg.cc/example12.png",
+    "image": "/assets/products/12.jpg",
     "category": "Beauty"
   },
   {
@@ -139,7 +139,7 @@
     "rating": 4.5,
     "stock": 16,
     "description": "Comfortable sandals for daily wear.",
-    "image": "https://i.postimg.cc/example13.png",
+    "image": "/assets/products/13.jpg",
     "category": "Footwear"
   },
   {
@@ -150,7 +150,7 @@
     "rating": 4.6,
     "stock": 11,
     "description": "Waterproof picnic mat for outdoor fun.",
-    "image": "https://i.postimg.cc/example14.png",
+    "image": "/assets/products/14.jpg",
     "category": "Lifestyle"
   },
   {
@@ -161,7 +161,7 @@
     "rating": 4.2,
     "stock": 35,
     "description": "Comfortable goggles for kids swimming.",
-    "image": "https://i.postimg.cc/example15.png",
+    "image": "/assets/products/15.jpg",
     "category": "Kids"
   },
   {
@@ -172,7 +172,7 @@
     "rating": 4.7,
     "stock": 8,
     "description": "Make fresh ice cream at home easily.",
-    "image": "https://i.postimg.cc/example16.png",
+    "image": "/assets/products/16.jpg",
     "category": "Appliances"
   }
 ]
