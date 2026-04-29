@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://i.postimg.cc/example1.png",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Beach Flip Flops",
+    "brand": "WalkEasy",
+    "price": 12,
+    "rating": 4.5,
+    "stock": 25,
+    "description": "Comfortable and lightweight flip flops for beach days.",
+    "image": "https://i.postimg.cc/example2.png",
+    "category": "Footwear"
+  },
+  {
+    "id": 3,
+    "name": "Straw Summer Hat",
+    "brand": "SunnyStyle",
+    "price": 18,
+    "rating": 4.6,
+    "stock": 15,
+    "description": "Wide brim straw hat for sun protection.",
+    "image": "https://i.postimg.cc/example3.png",
+    "category": "Accessories"
+  },
+  {
+    "id": 4,
+    "name": "Cooling Water Bottle",
+    "brand": "HydroCool",
+    "price": 10,
+    "rating": 4.4,
+    "stock": 30,
+    "description": "Keeps your water cool for hours during hot days.",
+    "image": "https://i.postimg.cc/example4.png",
+    "category": "Lifestyle"
+  },
+  {
+    "id": 5,
+    "name": "Men's Summer T-Shirt",
+    "brand": "CoolWear",
+    "price": 14,
+    "rating": 4.3,
+    "stock": 20,
+    "description": "Breathable cotton t-shirt for hot weather.",
+    "image": "https://i.postimg.cc/example5.png",
+    "category": "Clothing"
+  },
+  {
+    "id": 6,
+    "name": "Women's Summer Dress",
+    "brand": "BreezeFashion",
+    "price": 22,
+    "rating": 4.8,
+    "stock": 12,
+    "description": "Lightweight and stylish summer dress.",
+    "image": "https://i.postimg.cc/example6.png",
+    "category": "Clothing"
+  },
+  {
+    "id": 7,
+    "name": "Portable Mini Fan",
+    "brand": "AirGo",
+    "price": 9,
+    "rating": 4.2,
+    "stock": 40,
+    "description": "Handheld rechargeable mini fan.",
+    "image": "https://i.postimg.cc/example7.png",
+    "category": "Electronics"
+  },
+  {
+    "id": 8,
+    "name": "Sunscreen SPF 50",
+    "brand": "SkinGuard",
+    "price": 13,
+    "rating": 4.7,
+    "stock": 18,
+    "description": "Protects your skin from harmful UV rays.",
+    "image": "https://i.postimg.cc/example8.png",
+    "category": "Beauty"
+  },
+  {
+    "id": 9,
+    "name": "Beach Bag",
+    "brand": "CarryAll",
+    "price": 16,
+    "rating": 4.5,
+    "stock": 22,
+    "description": "Spacious bag perfect for beach essentials.",
+    "image": "https://i.postimg.cc/example9.png",
+    "category": "Accessories"
+  },
+  {
+    "id": 10,
+    "name": "Swimming Shorts",
+    "brand": "WaveWear",
+    "price": 17,
+    "rating": 4.6,
+    "stock": 19,
+    "description": "Quick-dry swimming shorts.",
+    "image": "https://i.postimg.cc/example10.png",
+    "category": "Clothing"
+  },
+  {
+    "id": 11,
+    "name": "Inflatable Pool Float",
+    "brand": "FloatyFun",
+    "price": 20,
+    "rating": 4.4,
+    "stock": 14,
+    "description": "Fun inflatable float for pool parties.",
+    "image": "https://i.postimg.cc/example11.png",
+    "category": "Lifestyle"
+  },
+  {
+    "id": 12,
+    "name": "Cooling Face Mist",
+    "brand": "FreshGlow",
+    "price": 11,
+    "rating": 4.3,
+    "stock": 28,
+    "description": "Instant cooling and refreshing mist.",
+    "image": "https://i.postimg.cc/example12.png",
+    "category": "Beauty"
+  },
+  {
+    "id": 13,
+    "name": "Summer Sandals",
+    "brand": "StepLight",
+    "price": 19,
+    "rating": 4.5,
+    "stock": 16,
+    "description": "Comfortable sandals for daily wear.",
+    "image": "https://i.postimg.cc/example13.png",
+    "category": "Footwear"
+  },
+  {
+    "id": 14,
+    "name": "Picnic Mat",
+    "brand": "OutdoorPro",
+    "price": 21,
+    "rating": 4.6,
+    "stock": 11,
+    "description": "Waterproof picnic mat for outdoor fun.",
+    "image": "https://i.postimg.cc/example14.png",
+    "category": "Lifestyle"
+  },
+  {
+    "id": 15,
+    "name": "Kids Swim Goggles",
+    "brand": "AquaKids",
+    "price": 8,
+    "rating": 4.2,
+    "stock": 35,
+    "description": "Comfortable goggles for kids swimming.",
+    "image": "https://i.postimg.cc/example15.png",
+    "category": "Kids"
+  },
+  {
+    "id": 16,
+    "name": "Ice Cream Maker",
+    "brand": "ChillMaker",
+    "price": 35,
+    "rating": 4.7,
+    "stock": 8,
+    "description": "Make fresh ice cream at home easily.",
+    "image": "https://i.postimg.cc/example16.png",
+    "category": "Appliances"
+  }
+]
