@@ -40,7 +40,7 @@ export default function LogInPage() {
           }}
         >
           <Label>Email</Label>
-          <Input placeholder="Enter your email" />
+          <Input placeholder="Enter your email" className={"rounded-md"} />
           <FieldError />
         </TextField>
         <TextField
@@ -62,7 +62,7 @@ export default function LogInPage() {
           }}
         >
           <Label>Password</Label>
-          <Input placeholder="Enter your password" />
+          <Input placeholder="Enter your password" className={"rounded-md"} />
           <Description>
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>
