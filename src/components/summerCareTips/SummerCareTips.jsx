@@ -38,7 +38,7 @@ export default function SummerCareTips() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {/* Skin Care */}
-          <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+          <div className="bg-white p-6 rounded-md shadow-md hover:shadow-xl transition">
             <div className="flex justify-center mb-4">
               <SkinIcon />
             </div>
@@ -49,7 +49,7 @@ export default function SummerCareTips() {
           </div>
 
           {/* Hydration */}
-          <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+          <div className="bg-white p-6 rounded-md shadow-md hover:shadow-xl transition">
             <div className="flex justify-center mb-4">
               <WaterIcon />
             </div>
@@ -60,7 +60,7 @@ export default function SummerCareTips() {
           </div>
 
           {/* Sun Protection */}
-          <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
+          <div className="bg-white p-6 rounded-md shadow-md hover:shadow-xl transition">
             <div className="flex justify-center mb-4">
               <SunIcon />
             </div>
@@ -69,7 +69,6 @@ export default function SummerCareTips() {
               Wear sunglasses, hats, and light clothing to protect yourself from harmful UV rays.
             </p>
           </div>
-
         </div>
       </div>
     </section>

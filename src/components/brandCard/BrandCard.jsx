@@ -35,7 +35,7 @@ export default function BrandCard() {
   ];
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12">
       <div className="max-w-7xl mx-auto px-4 text-center">
 
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
@@ -50,7 +50,7 @@ export default function BrandCard() {
           {brands.map((brand) => (
             <div
               key={brand.id}
-              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition"
+              className="bg-white p-6 rounded-md shadow-md hover:shadow-xl transition"
             >
               {/* Image */}
               <div className="relative w-full h-32 mb-4">
