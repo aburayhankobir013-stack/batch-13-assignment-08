@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
 
 const StarIcon = () => (
   <svg
@@ -11,48 +13,37 @@ const StarIcon = () => (
 );
 
 export default function ProductCard({ product }) {
-  const { name, price, rating, image } = product;
+  const {id, name, price, rating, image } = product;
 
   return (
     <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
-      
       {/* Image */}
       <div className="relative w-full h-48">
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className="object-cover"
-        />
+        <Image src={image} alt={name} fill className="object-cover" />
       </div>
 
       {/* Content */}
       <div className="p-4 space-y-2">
-        
         {/* Product Name */}
-        <h2 className="text-lg font-semibold text-gray-800">
-          {name}
-        </h2>
+        <h2 className="text-lg font-semibold text-gray-800">{name}</h2>
 
         {/* Rating */}
         <div className="flex items-center gap-1">
           {[...Array(Math.round(rating))].map((_, i) => (
             <StarIcon key={i} />
           ))}
-          <span className="text-sm text-gray-500 ml-1">
-            ({rating})
-          </span>
+          <span className="text-sm text-gray-500 ml-1">({rating})</span>
         </div>
 
         {/* Price */}
-        <p className="text-xl font-bold text-blue-600">
-          ${price}
-        </p>
+        <p className="text-xl font-bold text-blue-600">${price}</p>
 
         {/* Button */}
-        <button className="w-full mt-2 bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition cursor-pointer">
-          View Details
-        </button>
+        <Link href={`productDetails/${id}`}>
+          <button className="w-full mt-2 bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition cursor-pointer">
+            View details
+          </button>
+        </Link>
       </div>
     </div>
   );
