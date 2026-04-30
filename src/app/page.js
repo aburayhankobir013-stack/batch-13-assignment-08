@@ -1,3 +1,4 @@
+import Banar from "@/components/banar/Banar";
 import ProductCard from "@/components/productCard/ProductCard";
 
 export default async function HomePage() {
@@ -8,7 +9,8 @@ export default async function HomePage() {
 
   return (
     <>
-      <main className="bg-gray-100 flex items-center justify-center p-4">
+    <Banar />
+      <main className="flex items-center justify-center p-4 mt-12.5">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {products.slice(0, 4).map((product) => (
             <ProductCard key={product.id} product={product} />
