@@ -35,22 +35,21 @@ export default async function ProductDetails({ params }) {
   const { productId } = await params;
 
   const foundedProduct = products.find(
-    (product) => product.id === parseInt(productId),
-  );
+    (product) => product.id === parseInt(productId));
 
   const { name, brand, price, rating, stock, description, image, category } =
     foundedProduct;
 
   return (
     <div className="min-h-screen py-10 px-4">
-      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto bg-white rounded-md shadow-lg p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Image Section */}
         <div className="relative w-full h-80 md:h-full">
           <Image
             src={image}
             alt={name}
             fill
-            className="object-cover rounded-xl"
+            className="object-cover rounded-md"
           />
         </div>
 

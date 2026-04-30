@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
   const {id, name, price, rating, image } = product;
 
   return (
-    <div className="bg-white rounded-md shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
+    <div className="bg-white rounded-md shadow-md hover:shadow-md transition duration-300 overflow-hidden">
       {/* Image */}
       <div className="relative w-full h-48">
         <Image src={image} alt={name} fill className="object-cover" />
@@ -40,7 +40,7 @@ export default function ProductCard({ product }) {
 
         {/* Button */}
         <Link href={`productDetails/${id}`}>
-          <button className="w-full mt-2 bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition cursor-pointer">
+          <button className="w-full mt-2 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition cursor-pointer font-bold">
             View details
           </button>
         </Link>
