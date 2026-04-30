@@ -1,4 +1,5 @@
 import Banar from "@/components/banar/Banar";
+import BrandCard from "@/components/brandCard/BrandCard";
 import ProductCard from "@/components/productCard/ProductCard";
 import SummerCareTips from "@/components/summerCareTips/SummerCareTips";
 
@@ -19,6 +20,7 @@ export default async function HomePage() {
         </div>
       </main>
       <SummerCareTips />
+      <BrandCard />
     </>
   );
 }
