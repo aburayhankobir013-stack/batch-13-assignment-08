@@ -1,5 +1,6 @@
 import Banar from "@/components/banar/Banar";
 import ProductCard from "@/components/productCard/ProductCard";
+import SummerCareTips from "@/components/summerCareTips/SummerCareTips";
 
 export default async function HomePage() {
   const response = await fetch(
@@ -17,6 +18,7 @@ export default async function HomePage() {
           ))}
         </div>
       </main>
+      <SummerCareTips />
     </>
   );
 }

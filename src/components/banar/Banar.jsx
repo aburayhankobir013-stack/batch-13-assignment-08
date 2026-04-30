@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Banar(){
   return(
-    <div className="container mx-auto space-y-12.5 mt-12.5">
+    <div className="container mx-auto space-y-7 md:space-y-12.5 mt-7 md:mt-12.5  px-2">
       <h1 className="text-center font-bold text-green-900 text-3xl md:text-4xl">Welcome To Summer Mart</h1>
       <figure className="relative w-full h-64 md:h-125">
         <Image src={banarImage} alt="banar image" fill className="object-fit rounded-md"/>

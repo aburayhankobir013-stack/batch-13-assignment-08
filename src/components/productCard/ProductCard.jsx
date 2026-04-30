@@ -16,7 +16,7 @@ export default function ProductCard({ product }) {
   const {id, name, price, rating, image } = product;
 
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
+    <div className="bg-white rounded-md shadow-md hover:shadow-xl transition duration-300 overflow-hidden">
       {/* Image */}
       <div className="relative w-full h-48">
         <Image src={image} alt={name} fill className="object-cover" />
