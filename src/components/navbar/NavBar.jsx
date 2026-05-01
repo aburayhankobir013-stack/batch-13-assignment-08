@@ -1,112 +1,97 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
+import { signOut } from "better-auth/api";
 import Image from "next/image";
-import logo from "@/assets/icons/logo.jpg";
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
+// ark013@!!!ABC
 
-const MenuIcon = () => (
-  <svg
-    className="w-6 h-6"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4 6h16M4 12h16M4 18h16"
-    />
-  </svg>
-);
-
-const CloseIcon = () => (
-  <svg
-    className="w-6 h-6"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M6 18L18 6M6 6l12 12"
-    />
-  </svg>
-);
-
-export default function NavBar() {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
-
+  const { data: session, isPending } = authClient.useSession();
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="w-full shadow-md bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="relative size-12">
-          <Image src={logo} alt="logo" fill className="object-cover rounded-full" />
-        </div>
+        <div className="text-xl font-bold">LOGO</div>
+        {/* Center + Right (Client Controlled) */}
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
-          {/* Middle Links */}
-          <div className="flex gap-6 text-gray-700 font-medium">
-            <Link href="/" className="hover:text-blue-600">
-              Home
-            </Link>
-            <Link href="/products" className="hover:text-blue-600">
-              Products
-            </Link>
-            <Link href="/profile" className="hover:text-blue-600">
-              My Profile
-            </Link>
+        <div className="hidden md:flex items-center gap-8">
+          {/* Center Links */}
+          <div className="flex gap-6">
+            <Link href="/">Home</Link>
+            <Link href="/products">Products</Link>
+            <Link href="/profile">Profile</Link>
           </div>
 
-          {/* Auth Buttons */}
-          <div className="flex gap-3">
-            <Link href="/login">
-              <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50">
-                Login
-              </button>
-            </Link>
-            <Link href="/register">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                Register
-              </button>
-            </Link>
+          {/* Right Side Auth */}
+          <div className="flex items-center gap-4">
+            {session ? (
+              <>
+                <div className="flex items-center gap-2">
+                  <img
+                    src={session?.user?.image || "/assets/avatar/avatar.jpg"}
+                    className="w-8 h-8 rounded-full"
+                    alt="avatar"
+                  />
+                  <span>{session?.user?.name}</span>
+                </div>
+
+                <button onClick={()=> authClient.signOut()} className="cursor-pointer bg-red-500 text-white px-3 py-1 rounded">
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/login">
+                  <button className="px-3 py-1 border rounded">Login</button>
+                </Link>
+                <Link href="/register">
+                  <button className="bg-black text-white px-3 py-1 rounded">
+                    Register
+                  </button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setOpen(!open)}>
-          {open ? <CloseIcon /> : <MenuIcon />}
-        </button>
-      </div>
+        <div className="md:hidden">
+          <button onClick={() => setOpen(!open)}>☰</button>
+        </div>
 
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden px-4 pb-4 space-y-4">
-          {/* Links */}
-          <div className="flex flex-col gap-3 text-gray-700 font-medium">
+        {/* Mobile Dropdown */}
+        {open && (
+          <div className="absolute top-13 left-0 w-full bg-white shadow-md flex flex-col items-center gap-4 py-4 md:hidden">
             <Link href="/">Home</Link>
             <Link href="/products">Products</Link>
-            <Link href="/profile">My Profile</Link>
-          </div>
+            <Link href="/profile">Profile</Link>
 
-          {/* Auth */}
-          <div className="flex flex-col gap-2">
-            <Link href="/login">
-              <button className="w-full px-4 py-2 border border-blue-600 text-blue-600 rounded-lg">
-                Login
-              </button>
-            </Link>
-            <Link href="/register">
-              <button className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg">
-                Register
-              </button>
-            </Link>
+            {session ? (
+              <>
+                <div className="flex items-center gap-2">
+                  <img
+                    src={session?.user?.image || "/avatar.png"}
+                    className="w-8 h-8 rounded-full"
+                    alt="avatar"
+                  />
+                  <span>{session?.user?.name}</span>
+                </div>
+
+                <button onClick={() => authClient.signOut()} className="bg-red-500 text-white px-3 py-1 rounded">
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/login">Login</Link>
+                <Link href="/register">Register</Link>
+              </>
+            )}
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 }

@@ -1,4 +1,6 @@
 "use client";
+import { authClient } from "@/lib/auth-client"; //import the auth client
+import { useRouter } from "next/navigation";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -11,15 +13,36 @@ import {
 } from "@heroui/react";
 
 export default function LogInPage() {
-  const onSubmit = (event) => {
+  const router = useRouter();
+  const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const data = {};
+    const userData = {};
     // Convert FormData to plain object
     formData.forEach((value, key) => {
-      data[key] = value.toString();
+      userData[key] = value.toString();
     });
-    console.log(data);
+    const { data, error } = await authClient.signUp.email(
+      {
+        email: userData.email,
+        password: userData.password,
+        name: userData.name,
+        image: userData.imageURL,
+      },
+      {
+        onRequest: (ctx) => {
+          //show loading
+        },
+        onSuccess: (ctx) => {
+          router.push("/");
+        },
+        onError: (ctx) => {
+          // display the error message
+          alert(ctx.error.message);
+        },
+      },
+    );
+    console.log(data,error);
   };
   return (
     <div className="min-h-screen flex justify-center bg-linear-to-r linear-to-r from-cyan-400 to-blue-500">
@@ -28,19 +51,11 @@ export default function LogInPage() {
         render={(props) => <form {...props} data-custom="foo" />}
         onSubmit={onSubmit}
       >
-        <TextField
-          isRequired
-          name="name"
-          type="text"
-        >
+        <TextField isRequired name="name" type="text">
           <Label>Name</Label>
-          <Input placeholder="Enter your name" className={"rounded-md"}/>
+          <Input placeholder="Enter your name" className={"rounded-md"} />
         </TextField>
-        <TextField
-          isRequired
-          name="imageURL"
-          type="text"
-        >
+        <TextField name="imageURL" type="text">
           <Label>Image URL</Label>
           <Input placeholder="Enter your image url" className={"rounded-md"} />
         </TextField>
@@ -78,7 +93,7 @@ export default function LogInPage() {
           }}
         >
           <Label>Password</Label>
-          <Input placeholder="Enter your password" className={"rounded-md"}/>
+          <Input placeholder="Enter your password" className={"rounded-md"} />
           <Description>
             Must be at least 8 characters with 1 uppercase and 1 number
           </Description>

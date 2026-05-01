@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -11,15 +12,26 @@ import {
 } from "@heroui/react";
 
 export default function LogInPage() {
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const data = {};
+    const userData = {};
     // Convert FormData to plain object
     formData.forEach((value, key) => {
-      data[key] = value.toString();
+      userData[key] = value.toString();
     });
-    console.log(data);
+    const { data, error } = await authClient.signIn.email(
+      {
+        email: userData.email,
+        password: userData.password,
+        callbackURL: "/",
+        rememberMe: true,
+      },
+      {
+        //callbacks
+      },
+    );
+    console.log(data, error);
   };
   return (
     <div className="min-h-screen flex justify-center bg-linear-to-r linear-to-r from-cyan-400 to-blue-500">
