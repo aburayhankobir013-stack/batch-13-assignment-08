@@ -41,11 +41,12 @@ export default function LogInPage() {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const userData = {};
-    // Convert FormData to plain object
+
     formData.forEach((value, key) => {
       userData[key] = value.toString();
     });
-    const { data, error } = await authClient.signIn.email(
+
+    await authClient.signIn.email(
       {
         email: userData.email,
         password: userData.password,
@@ -60,7 +61,7 @@ export default function LogInPage() {
   };
 
   const handleGoogleSignin = async () => {
-    const data = await authClient.signIn.social({
+      await authClient.signIn.social({
       provider: "google",
     });
   };

@@ -1,18 +1,23 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { signOut } from "better-auth/api";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 // ark013@!!!ABC
 
 export default function Navbar() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [imgError, setImgError] = useState(false);
   const { data: session, isPending } = authClient.useSession();
   const name = session?.user?.name;
   const image = session?.user?.image;
   const firstLetter = name?.charAt(0).toLocaleUpperCase() || "?";
+  
+  const handleSignOut = () => {
+    authClient.signOut();
+    router.push("/");
+  }
 
   return (
     <nav className="w-full shadow-md bg-white sticky top-0 z-50">
@@ -49,7 +54,7 @@ export default function Navbar() {
                 </figure>
                 <span>{name}</span>
                 <button
-                  onClick={() => authClient.signOut()}
+                  onClick={handleSignOut}
                   className="cursor-pointer bg-red-500 text-white px-3 py-1 rounded"
                 >
                   Logout
@@ -105,7 +110,7 @@ export default function Navbar() {
                 </figure>
                 <span>{name}</span>
                 <button
-                  onClick={() => authClient.signOut()}
+                  onClick={handleSignOut}
                   className="bg-red-500 text-white px-3 py-1 rounded cursor-pointer"
                 >
                   Logout
