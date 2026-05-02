@@ -64,7 +64,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={() => setOpen(!open)}>☰</button>
+          <button className="cursor-pointer font-bold border size-8 rounded-full hover:shadow-md" onClick={() => setOpen(!open)}>☰</button>
         </div>
 
         {/* Mobile Dropdown */}
