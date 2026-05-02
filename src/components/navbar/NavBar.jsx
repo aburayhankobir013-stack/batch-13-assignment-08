@@ -13,7 +13,7 @@ export default function Navbar() {
   const name = session?.user?.name;
   const image = session?.user?.image;
   const firstLetter = name?.charAt(0).toLocaleUpperCase() || "?";
-  
+
   return (
     <nav className="w-full shadow-md bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -33,17 +33,25 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             {session ? (
               <>
-                <figure className="relative border rounded-full flex justify-center items-center size-10">
-                  {
-                    image && !imgError ? (
-                      <Image src={image} alt="avatar" fill className="object-cover rounded-full" onError={() => setImgError(true)}/>
-                    ):(
-                      <span className="text-xl font-bold text-gray-700">{firstLetter}</span>
-                    )
-                  }
+                <figure className="p-1 border rounded-full flex justify-center items-center size-10">
+                  {image && !imgError ? (
+                    <img
+                      src={image}
+                      alt="avatar"
+                      className="object-cover rounded-full"
+                      onError={() => setImgError(true)}
+                    />
+                  ) : (
+                    <span className="text-xl font-bold text-gray-700">
+                      {firstLetter}
+                    </span>
+                  )}
                 </figure>
-                  <span>{session?.user?.name}</span>
-                <button onClick={()=> authClient.signOut()} className="cursor-pointer bg-red-500 text-white px-3 py-1 rounded">
+                <span>{name}</span>
+                <button
+                  onClick={() => authClient.signOut()}
+                  className="cursor-pointer bg-red-500 text-white px-3 py-1 rounded"
+                >
                   Logout
                 </button>
               </>
@@ -64,7 +72,12 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button className="cursor-pointer font-bold border size-8 rounded-full hover:shadow-md" onClick={() => setOpen(!open)}>☰</button>
+          <button
+            className="cursor-pointer font-bold border size-8 rounded-full hover:shadow-md"
+            onClick={() => setOpen(!open)}
+          >
+            ☰
+          </button>
         </div>
 
         {/* Mobile Dropdown */}
@@ -76,16 +89,25 @@ export default function Navbar() {
 
             {session ? (
               <>
-                <div className="flex items-center gap-2">
-                  <img
-                    src={session?.user?.image || "/assets/avatar/avatar.jpg"}
-                    className="w-8 h-8 rounded-full"
+                <figure className="border p-1 rounded-full flex items-center gap-2">
+                  {image && !imgError ? (
+                    <img
+                    src={image}
                     alt="avatar"
+                    className="w-8 h-8 rounded-full"
+                    onError={() => setImgError(true)}
                   />
-                  <span>{session?.user?.name}</span>
-                </div>
-
-                <button onClick={() => authClient.signOut()} className="bg-red-500 text-white px-3 py-1 rounded cursor-pointer">
+                  ):(
+                    <span className="text-xl font-bold text-gray-700">
+                      {firstLetter}
+                    </span>
+                  )}
+                </figure>
+                <span>{name}</span>
+                <button
+                  onClick={() => authClient.signOut()}
+                  className="bg-red-500 text-white px-3 py-1 rounded cursor-pointer"
+                >
                   Logout
                 </button>
               </>

@@ -18,11 +18,11 @@ export default function LogInPage() {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const userData = {};
-    // Convert FormData to plain object
+    
     formData.forEach((value, key) => {
       userData[key] = value.toString();
     });
-    const { data, error } = await authClient.signUp.email(
+      await authClient.signUp.email(
       {
         email: userData.email,
         password: userData.password,
@@ -31,18 +31,15 @@ export default function LogInPage() {
       },
       {
         onRequest: (ctx) => {
-          //show loading
         },
         onSuccess: (ctx) => {
           router.push("/");
         },
         onError: (ctx) => {
-          // display the error message
           alert(ctx.error.message);
         },
       },
     );
-    console.log(data,error);
   };
   return (
     <div className="min-h-screen flex justify-center bg-linear-to-r linear-to-r from-cyan-400 to-blue-500">
