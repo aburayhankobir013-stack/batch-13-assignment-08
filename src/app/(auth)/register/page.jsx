@@ -12,13 +12,13 @@ import {
   TextField,
 } from "@heroui/react";
 
-export default function LogInPage() {
+export default function RegisterPage() {
   const router = useRouter();
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const userData = {};
-    
+
     formData.forEach((value, key) => {
       userData[key] = value.toString();
     });
