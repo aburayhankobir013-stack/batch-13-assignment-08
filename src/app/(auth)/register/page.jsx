@@ -47,7 +47,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex justify-center bg-linear-to-r linear-to-r from-cyan-400 to-blue-500">
       <Form
-        className="flex w-96 flex-col gap-4 shadow-md rounded-md h-fit p-4 mt-25 bg-white"
+        className="flex mx-2 flex-col gap-4 shadow-md rounded-md h-fit p-4 mt-25 bg-white"
         render={(props) => <form {...props} data-custom="foo" />}
         onSubmit={onSubmit}
       >

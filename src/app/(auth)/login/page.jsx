@@ -75,7 +75,7 @@ export default function LogInPage() {
   return (
     <div className="min-h-screen flex flex-col items-center gap-2 bg-linear-to-r linear-to-r from-cyan-400 to-blue-500">
       <Form
-        className="flex w-96 flex-col gap-4 shadow-md rounded-md h-fit p-4 mt-25 bg-white"
+        className="flex mx-2 flex-col gap-4 shadow-md rounded-md h-fit p-4 mt-25 bg-white"
         render={(props) => <form {...props} data-custom="foo" />}
         onSubmit={onSubmit}
       >
@@ -131,13 +131,13 @@ export default function LogInPage() {
       </Form>
       <button
         onClick={handleGoogleSignin}
-        className="flex items-center gap-2 py-2 px-23 border rounded-md bg-white font-bold text-black hover:shadow-md cursor-pointer"
+        className="flex items-center mx-2 gap-2 py-2 px-23 border rounded-md bg-white font-bold text-black hover:shadow-md cursor-pointer"
       >
         <GoogleIcon />
         Continue with Google
       </button>
       <Link href={"/register"}>
-        <Button className={"px-42 bg-white text-bold text-black rounded-md"} type="submit">Register</Button>
+        <Button className={"px-42 mx-2 bg-white text-bold text-black rounded-md"} type="submit">Register</Button>
       </Link>
     </div>
   );

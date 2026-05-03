@@ -35,7 +35,7 @@ export default function UpdateProfileForm() {
   return (
     <div className="min-h-screen flex justify-center bg-linear-to-r linear-to-r from-cyan-400 to-blue-500">
       <Form
-        className="flex w-96 flex-col gap-4 bg-white h-fit mt-25 p-4 rounded-md shadow-md"
+        className="flex mx-2 flex-col gap-4 bg-white h-fit mt-25 p-4 rounded-md shadow-md"
         render={(props) => <form {...props} data-custom="foo" />}
         onSubmit={onSubmit}
       >
