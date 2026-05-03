@@ -29,8 +29,6 @@ const CartIcon = () => (
 export default async function ProductDetails({ params }) {
   const response = await fetch("http://localhost:3000/database/data.json");
   const products = await response.json();
-  console.log(products);
-
   const { productId } = await params;
 
   const foundedProduct = products.find(
