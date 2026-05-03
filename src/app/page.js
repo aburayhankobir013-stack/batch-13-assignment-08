@@ -6,9 +6,7 @@ import CTASection from "@/components/CTASection/CTASection";
 import Marquee from "react-fast-marquee";
 
 export default async function HomePage() {
-  const response = await fetch(
-    "http://localhost:3000/database/data.json",
-  );
+  const response = await fetch("http://localhost:3000/database/data.json");
   const products = await response.json();
 
   return (

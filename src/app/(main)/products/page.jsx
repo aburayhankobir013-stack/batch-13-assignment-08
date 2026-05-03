@@ -1,9 +1,7 @@
 import ProductCard from "@/components/productCard/ProductCard";
 
 export default async function ProductsPage() {
-  const response = await fetch(
-    "http://localhost:3000/database/data.json",
-  );
+  const response = await fetch("http://localhost:3000/database/data.json");
   const products = await response.json();
   return (
     <>
