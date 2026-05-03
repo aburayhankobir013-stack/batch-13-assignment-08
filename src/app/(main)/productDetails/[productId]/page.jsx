@@ -28,7 +28,7 @@ const CartIcon = () => (
 
 export default async function ProductDetails({ params }) {
   const response = await fetch(
-    "https://batch-13-assignment-git-1b1af9-aburayhankobir013-7602s-projects.vercel.app/database/data.json",
+    "http://localhost:3000/database/data.json",
   );
   const products = await response.json();
 
