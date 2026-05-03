@@ -9,14 +9,12 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { useRouter } from "next/router";
 
 export default function UpdateProfileForm() {
     const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const userData = {};
-    // Convert FormData to plain object
     formData.forEach((value, key) => {
       userData[key] = value.toString();
     });
