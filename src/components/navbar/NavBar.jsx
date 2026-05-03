@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <nav className="w-full shadow-md bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="text-xl font-bold">Sun cart</div>
+        <div className="text-xl font-bold bg-linear-to-r from-orange-400 via-pink-500 to-red-500 bg-clip-text text-transparent">Sun cart</div>
         <div className="hidden md:flex items-center gap-8">
           {/* Center Links */}
           <div className="flex items-center font-bold gap-6">
