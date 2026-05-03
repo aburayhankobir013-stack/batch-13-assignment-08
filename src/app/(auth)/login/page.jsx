@@ -1,6 +1,7 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
+import { toast } from '@heroui/react';
 import {
   Button,
   Description,
@@ -46,24 +47,30 @@ export default function LogInPage() {
       userData[key] = value.toString();
     });
 
-    await authClient.signIn.email(
+    const{data, error} = await authClient.signIn.email(
       {
         email: userData.email,
         password: userData.password,
         callbackURL: "/",
         rememberMe: true,
-      },
-      {
-        //callbacks
-      },
+      }
     );
-    alert(error.message);
+    if(data){
+      toast.success("Successfully logedin!");
+    }else{
+      toast.danger(error.message);
+    }
   };
 
   const handleGoogleSignin = async () => {
-      await authClient.signIn.social({
+      const {data,error} = await authClient.signIn.social({
       provider: "google",
     });
+    if(data){
+      toast.success("Successfully logedin with google!");
+    }else{
+      toast.danger(error.message);
+    }
   };
   return (
     <div className="min-h-screen flex flex-col items-center gap-2 bg-linear-to-r linear-to-r from-cyan-400 to-blue-500">

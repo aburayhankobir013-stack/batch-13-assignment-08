@@ -1,6 +1,8 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
+import { toast } from "@heroui/react";
+import { useRouter } from "next/navigation";
 import {
   Button,
   FieldError,
@@ -11,17 +13,24 @@ import {
 } from "@heroui/react";
 
 export default function UpdateProfileForm() {
-    const onSubmit = async (event) => {
+  const router = useRouter();
+  const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const userData = {};
     formData.forEach((value, key) => {
       userData[key] = value.toString();
     });
-      await authClient.updateUser({
+    const { data, error } = await authClient.updateUser({
       image: userData.imageURL,
       name: userData.name,
     });
+    if (data) {
+      toast.success("Profile Successfully Updated!");
+      router.push("/profile");
+    } else {
+      toast.danger(error.message);
+    }
   };
   return (
     <div className="min-h-screen flex justify-center bg-linear-to-r linear-to-r from-cyan-400 to-blue-500">

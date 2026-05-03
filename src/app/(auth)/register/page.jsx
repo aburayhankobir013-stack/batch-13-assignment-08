@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client"; //import the auth client
 import { useRouter } from "next/navigation";
 import { Check } from "@gravity-ui/icons";
+import { toast } from '@heroui/react';
 import {
   Button,
   Description,
@@ -31,12 +32,14 @@ export default function RegisterPage() {
       },
       {
         onRequest: (ctx) => {
+          toast("Register pending...");
         },
         onSuccess: (ctx) => {
+          toast.success("Successfully registered!");
           router.push("/");
         },
         onError: (ctx) => {
-          alert(ctx.error.message);
+          toast.danger(ctx.error.message);
         },
       },
     );
