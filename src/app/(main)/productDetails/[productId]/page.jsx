@@ -27,15 +27,14 @@ const CartIcon = () => (
 );
 
 export default async function ProductDetails({ params }) {
-  const response = await fetch("https://batch-13-assignment-08-database.onrender.com/products");
-  const products = await response.json();
   const { productId } = await params;
-
-  const foundedProduct = products.find(
-    (product) => product.id === parseInt(productId));
+  const response = await fetch(
+    `https://batch-13-assignment-08-database.onrender.com/products/${productId}`,
+  );
+  const product = await response.json();
 
   const { name, brand, price, rating, stock, description, image, category } =
-    foundedProduct;
+    product;
 
   return (
     <div className="min-h-screen py-10 px-4">
