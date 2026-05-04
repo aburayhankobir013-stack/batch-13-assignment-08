@@ -6,7 +6,7 @@ import CTASection from "@/components/CTASection/CTASection";
 import Marquee from "react-fast-marquee";
 
 export default async function HomePage() {
-  const response = await fetch("https://batch-13-assignment-08-dwtcgvb6l.vercel.app/database/data.json");
+  const response = await fetch("https://batch-13-assignment-08-database.onrender.com/products");
   const products = await response.json();
 
   return (
