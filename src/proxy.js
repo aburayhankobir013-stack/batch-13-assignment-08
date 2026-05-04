@@ -2,10 +2,11 @@ import dns from "node:dns";
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 import { auth } from "@/lib/auth";
 import { NextResponse } from "next/server";
+import { headers } from "next/headers";
 
 export async function proxy(request) {
   const session = await auth.api.getSession({
-    headers: request.headers,
+    headers: await headers(),
   });
 
   if (!session) {
